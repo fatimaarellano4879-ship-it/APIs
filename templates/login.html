@@ -1,0 +1,38 @@
+{% extends "maestra.html" %}
+{% block titulo %} Login {% endblock %}
+{% block contenido %}
+<div class="columns is-centered">
+    <div class="column is-4">
+        <div class="box">
+            <h2 class="title has-text-centered">Iniciar sesión</h2>
+            <form method="POST" action="{{ url_for('auth.login') }}">
+                {{ form.hidden_tag() }}
+                
+                <div class="field">
+                    <label class="label">Usuario</label>
+                    <div class="control">
+                        {{ form.username(class="input", placeholder="Tu usuario") }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Contraseña</label>
+                    <div class="control">
+                        {{ form.password(class="input", placeholder="********") }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="checkbox">
+                        {{ form.remember() }} Recordarme
+                    </label>
+                </div>
+
+                <div class="control">
+                    {{ form.submit(class="button is-link is-fullwidth") }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

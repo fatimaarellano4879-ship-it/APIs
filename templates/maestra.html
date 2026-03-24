@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojuegos - {% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+</head>
+<body>
+    <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a href="{{url_for('juegos')}}" class="navbar-item">
+                <strong>🎮 GameStore</strong>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                {% if current_user.is_authenticated %}
+                <a class="navbar-item" href="{{url_for('juegos')}}">Juegos</a>
+                {% endif %}
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        {% if current_user.is_authenticated %}
+                            <span class="tag is-light mr-3">Hola, {{ current_user.username }}</span>
+                            <a href="{{ url_for('auth.logout') }}" class="button is-danger">Cerrar sesión</a>
+                        {% else %}
+                            <a href="{{ url_for('auth.login') }}" class="button is-success">Iniciar sesión</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="notification is-danger is-light">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+            {% block contenido %} {% endblock %}
+        </div>
+    </section>
+</body>
+</html>

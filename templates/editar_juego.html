@@ -1,0 +1,32 @@
+{% extends "maestra.html" %}
+{% block titulo %} Editar juego {% endblock %}
+{% block contenido %}
+<div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+        <h3 class="is-size-3">Editar: {{ juego.nombre }}</h3>
+        <form action="{{url_for('actualizar_juego')}}" method="post">
+            <input type="hidden" name="id" value="{{ juego.id }}">
+            
+            <div class="field">
+                <label class="label" for="nombre">Nombre:</label>
+                <input value="{{ juego.nombre }}" required type="text" class="input" name="nombre" id="nombre">
+            </div>
+
+            <div class="field">
+                <label class="label" for="descripcion">Descripción</label>
+                <input value="{{ juego.descripcion }}" required type="text" class="input" name="descripcion" id="descripcion">
+            </div>
+
+            <div class="field">
+                <label class="label" for="precio">Precio</label>
+                <input value="{{ juego.precio }}" required type="number" step="0.01" class="input" name="precio" id="precio">
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="button is-success">Actualizar</button>
+                <a href="{{url_for('juegos')}}" class="button is-primary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "maestra.html" %}
+{% block titulo %} Lista de Juegos {% endblock %}
+{% block contenido %}
+<div class="columns">
+    <div class="column">
+        <h3 class="is-size-3">Juegos Registrados</h3>
+        <a href="{{url_for('formulario_agregar_juego')}}" class="button is-success mb-3">Agregar Nuevo</a>
+        <table class="table is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for juego in juegos %}
+                <tr>
+                    <td>{{ juego.nombre }}</td>
+                    <td>{{ juego.descripcion }}</td>
+                    <td>${{ juego.precio }}</td>
+                    <td>
+                        <div class="buttons">
+                            <a href="{{url_for('editar_juego', id=juego.id)}}" class="button is-info is-small">Editar</a>
+                            <form action="{{url_for('eliminar_juego')}}" method="POST" style="display: inline;">
+                                <input type="hidden" name="id" value="{{juego.id}}">
+                                <button class="button is-danger is-small">Eliminar</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
