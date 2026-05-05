@@ -1,0 +1,30 @@
+Exception on /forzar_error [GET]
+Traceback (most recent call last):
+  File "C:\Users\L13 YOGA\PYTHON\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\L13 YOGA\PYTHON\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\L13 YOGA\PYTHON\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\L13 YOGA\PYTHON\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\L13 YOGA\PYTHON\crud_juego_flask\main.py", line 134, in forzar_error
+    resultado = 1 / 0
+                ~~^~~
+ZeroDivisionError: division by zero
+Exception on /forzar_error [GET]
+Traceback (most recent call last):
+  File "C:\Users\L13 YOGA\PYTHON\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\L13 YOGA\PYTHON\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\L13 YOGA\PYTHON\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\L13 YOGA\PYTHON\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\L13 YOGA\PYTHON\crud_juego_flask\main.py", line 163, in forzar_error
+    resultado = 1 / 0
+                ~~^~~
+ZeroDivisionError: division by zero

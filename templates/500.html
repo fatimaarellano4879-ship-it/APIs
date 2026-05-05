@@ -1,0 +1,17 @@
+{% extends "maestra.html" %}
+
+{% block titulo %} Error 500 - Error del Servidor {% endblock %}
+
+{% block contenido %}
+<section class="section">
+    <div class="columns is-centered">
+        <div class="column is-half has-text-centered" style="margin-top: 50px;">
+            <h1 class="title is-1 has-text-danger">Error 500</h1>
+            <h2 class="subtitle is-3">Error Interno del Servidor</h2>
+            <p>Oops... Algo salió mal en mi código. El error fue de capa 8 y ya se está solucionando.</p>
+            <br>
+            <a href="{{ url_for('juegos') }}" class="button is-primary">Volver a la lista de juegos</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

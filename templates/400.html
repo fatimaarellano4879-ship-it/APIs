@@ -1,0 +1,17 @@
+{% extends "maestra.html" %}
+
+{% block titulo %} Error 400 - Solicitud Incorrecta {% endblock %}
+
+{% block contenido %}
+<section class="section">
+    <div class="columns is-centered">
+        <div class="column is-half has-text-centered" style="margin-top: 50px;">
+            <h1 class="title is-1 has-text-danger">Error 400</h1>
+            <h2 class="subtitle is-3">Solicitud Incorrecta</h2>
+            <p>Faltan datos en el formulario, vuelve a intentarlo y asegúrate de completar los datos requeridos.</p>
+            <br>
+            <a href="{{ url_for('juegos') }}" class="button is-primary">Volver a la lista de juegos</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

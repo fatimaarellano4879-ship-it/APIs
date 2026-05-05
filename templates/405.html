@@ -1,0 +1,17 @@
+{% extends "maestra.html" %}
+
+{% block titulo %} Error 405 - Método no permitido {% endblock %}
+
+{% block contenido %}
+<section class="section">
+    <div class="columns is-centered">
+        <div class="column is-half has-text-centered" style="margin-top: 50px;">
+            <h1 class="title is-1 has-text-info">Error 405</h1>
+            <h2 class="subtitle is-3">Método no permitido</h2>
+            <p>Eso no se hace, no te pases</p>
+            <br>
+            <a href="{{ url_for('juegos') }}" class="button is-primary">Volver a la lista de juegos</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

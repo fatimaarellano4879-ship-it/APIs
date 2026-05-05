@@ -1,0 +1,17 @@
+{% extends "maestra.html" %}
+
+{% block titulo %} Error 404 - No Encontrado {% endblock %}
+
+{% block contenido %}
+<section class="section">
+    <div class="columns is-centered">
+        <div class="column is-half has-text-centered" style="margin-top: 50px;">
+            <h1 class="title is-1 has-text-warning">Error 404</h1>
+            <h2 class="subtitle is-3">Página no encontrada</h2>
+            <p>Eso ni siquiera esta en el menu 7-7</p>
+            <br>
+            <a href="{{ url_for('juegos') }}" class="button is-primary">Volver a la lista de juegos</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
